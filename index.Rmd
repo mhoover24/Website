@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+output: html_document
+---
+## Filtering Columns and Rows
+
+with SQL, you can filter columns with SELECT and rows with WHERE.  Lets try an expample with the Lahman baseball database. First, we need to load the appropriate packages. 
+```{r warning=FALSE,message=FALSE}
+library(Lahman)
+library(sqldf)
+```
+Now, suppose we would like to see the homerun totals for the 1927 Yankees. We could write the following
+
+```{r}
+query<-"Select playerID,yearID,teamID,HR FROM Batting 
+WHERE teamID='NYA' and yearID=1927"
+sqldf(query)
+
+
+
+```
+
