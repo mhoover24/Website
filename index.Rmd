@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "SQL"
 output: html_document
 ---
 ## Filtering Columns and Rows
@@ -18,5 +18,38 @@ sqldf(query)
 
 
 
+```
+
+```{r}
+query<-"SELECT playerID,teamID,yearID,HR FROM Batting 
+WHERE teamID= 'NYA' and HR>=40"
+
+sqldf(query)
+```
+
+```{r}
+query<-"SELECT playerID,teamID,HR,SO FROM Batting
+WHERE HR>40 AND SO<60"
+
+sqldf(query)
+```
+
+```{r}
+query<- "SELECT playerID,teamID,yearID,HR FROM Batting
+WHERE teamID= 'PHI' and HR>30 and yearID>=1970 and yearID<=1979 and HR>30"
+
+sqldf(query)
+```
+
+## ORDER BY
+
+With SQL you an order the rows of your output. FOr instance, suppose you want to see every instance of a player hitting more than 50 homeruns, but you would like the players with the most homeuns at the top. We could do the following:
+
+```{r}
+query<- "SELECT playerID,teamID,yearID,HR FROM Batting
+WHERE HR>50
+ORDER BY HR DESC"
+
+sqldf(query)
 ```
 
