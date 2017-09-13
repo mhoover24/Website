@@ -283,6 +283,35 @@ sqldf(query)</code></pre>
 ## 34  mayswi01    NY1   1955 51
 ## 35 fieldce01    DET   1990 51
 ## 36 jonesan01    ATL   2005 51</code></pre>
+<p>This is my 7 pm class. I am still practicing. Let’s make a query:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,HR FROM
+Batting
+WHERE playerID='ruthba01'&quot;
+
+sqldf(query)</code></pre>
+<pre><code>##    playerID HR
+## 1  ruthba01  0
+## 2  ruthba01  4
+## 3  ruthba01  3
+## 4  ruthba01  2
+## 5  ruthba01 11
+## 6  ruthba01 29
+## 7  ruthba01 54
+## 8  ruthba01 59
+## 9  ruthba01 35
+## 10 ruthba01 41
+## 11 ruthba01 46
+## 12 ruthba01 25
+## 13 ruthba01 47
+## 14 ruthba01 60
+## 15 ruthba01 54
+## 16 ruthba01 46
+## 17 ruthba01 49
+## 18 ruthba01 46
+## 19 ruthba01 41
+## 20 ruthba01 34
+## 21 ruthba01 22
+## 22 ruthba01  6</code></pre>
 </div>
 
 

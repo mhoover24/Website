@@ -18,7 +18,13 @@ sqldf(query)
 
 
 
+
 ```
+
+
+
+
+
 
 ```{r}
 query<-"SELECT playerID,teamID,yearID,HR FROM Batting 
@@ -51,5 +57,18 @@ WHERE HR>50
 ORDER BY HR DESC"
 
 sqldf(query)
+```
+
+This is my 7 pm class. I am still practicing. Let's make a query:
+
+```{r}
+
+query<-"SELECT playerID,HR FROM
+Batting
+WHERE playerID='ruthba01'"
+
+sqldf(query)
+
+
 ```
 
