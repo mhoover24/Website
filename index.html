@@ -463,6 +463,25 @@ sqldf(query)</code></pre>
 ## 21 ruthba01 New York Yankees   1934 22
 ## 22 ruthba01    Boston Braves   1935  6</code></pre>
 <p>In the example above, we looked for results with Babe Ruth’s name, team name, year played, and homerun total.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT nameFirst,nameLast,avg(salary)
+FROM Salaries INNER JOIN Master
+ON Salaries.playerID=Master.playerID
+WHERE nameFirst='Bob'
+GROUP BY Salaries.playerID
+HAVING avg(salary)&gt;1000000
+ORDER BY avg(salary) DESC&quot;
+
+sqldf(query)</code></pre>
+<pre><code>##   nameFirst  nameLast avg(salary)
+## 1       Bob   Wickman     2635813
+## 2       Bob     Welch     1930417
+## 3       Bob     Howry     1804583
+## 4       Bob    Horner     1416667
+## 5       Bob Tewksbury     1288182
+## 6       Bob   Stanley     1067500
+## 7       Bob     Boone     1047580
+## 8       Bob     Ojeda     1035926</code></pre>
+<p>In the above example, we looked for players named Bob who average more than one million dollars in salary for their careers by last name</p>
 </div>
 
 

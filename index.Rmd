@@ -115,6 +115,16 @@ WHERE playerID='ruthba01'"
 sqldf(query)
 ```
 In the example above, we looked for results with Babe Ruth's name, team name, year played, and homerun total.
+```{r}
+query<-"SELECT nameFirst,nameLast,avg(salary)
+FROM Salaries INNER JOIN Master
+ON Salaries.playerID=Master.playerID
+WHERE nameFirst='Bob'
+GROUP BY Salaries.playerID
+HAVING avg(salary)>1000000
+ORDER BY avg(salary) DESC"
 
-
+sqldf(query)
+```
+In the above example, we looked for players named Bob who average more than one million dollars in salary for their careers by last name 
 
